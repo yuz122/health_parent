@@ -108,6 +108,7 @@ public class UserServiceImpl implements UserService {
         userDao.delUserAndRole(user.getId());
         //删除之后,再将检查组表进行修改
         String hashpw = BCrypt.hashpw(user.getPassword(), BCrypt.gensalt());
+        user.setPassword(hashpw);
         userDao.updateUser(user);
         //修改弄成之后再进行中间表的插入
         for (Integer roleId : roleIds) {

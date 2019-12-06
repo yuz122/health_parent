@@ -28,9 +28,9 @@ public class PermissionController {
         try {
             permissionService.add(Permission);
         }catch (Exception e){
-            return new Result(false, "");
+            return new Result(false, "添加权限失败");
         }
-        return new Result(true,"");
+        return new Result(true,"添加权限成功");
     }
 
     @RequestMapping("/findPage")
@@ -45,19 +45,19 @@ public class PermissionController {
     public Result findAll(){
         List<Permission> permissionList = permissionService.findAll();
         if(permissionList !=null && permissionList.size()>0){
-            Result result=new Result(true, "",permissionList);
+            Result result=new Result(true, "查询权限成功",permissionList);
             return  result;
         }
-        return new Result(false, "");
+        return new Result(false, "查询权限失败");
     }
 
     @RequestMapping("/findById")
     public Result findById(Integer id){
         try {
             Permission permission=permissionService.findById(id);
-            return new Result(true,"",permission);
+            return new Result(true,"查询权限成功",permission);
         }catch (Exception e){
-            return  new Result(false, "");
+            return  new Result(false, "查询权限失败");
         }
 
     }
@@ -66,9 +66,9 @@ public class PermissionController {
     public Result findByRoleIds(Integer id){
         try {
             List<Integer> checkitemIds=permissionService.findByRoleIds(id);
-            return new Result(true, "",checkitemIds);
+            return new Result(true, "查询成功",checkitemIds);
         }catch (Exception e){
-            return  new Result(false,"");
+            return  new Result(false,"查询失败");
         }
 
     }
@@ -81,9 +81,9 @@ public class PermissionController {
         }catch (Exception e){
             e.printStackTrace();
 
-            return new Result(false,"");
+            return new Result(false,"删除成功");
         }
-        return  new Result(true, "");
+        return  new Result(true, "删除失败");
     }
 
     @RequestMapping("/edit")
@@ -93,11 +93,11 @@ public class PermissionController {
 
         }catch (Exception e){
 
-            return new Result(false,"");
+            return new Result(false,"编辑失败");
 
         }
 
-        return new Result(true,"");
+        return new Result(true,"编辑成功");
 
     }
 
