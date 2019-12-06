@@ -92,7 +92,8 @@
                     <template>
                         <el-tabs ref="dataAddForm" v-model="activeName" type="card">
                             <el-tab-pane label="用户基本信息" name="first">
-                                <el-form label-position="right" label-width="100px" :rules="rules">
+                                <el-form label-position="right" label-width="100px" >
+                                    <!--:rules="rules"-->
                                     <el-row>
                                         <el-col :span="12">
                                             <el-form-item label="用户名" prop="username">
@@ -204,6 +205,14 @@
                                         </el-col>
                                     </el-row>
                                     <el-row>
+                                        <el-col :span="12">
+                                            <el-form-item label="是否禁用">
+                                                <el-select v-model="formData.station">
+                                                    <el-option label="禁用" value="是"></el-option>
+                                                    <el-option label="启用" value="否"></el-option>
+                                                </el-select>
+                                            </el-form-item>
+                                        </el-col>
                                         <el-col :span="18">
                                             <el-form-item label="说明">
                                                 <el-input v-model="formData.remark" type="textarea"></el-input>
