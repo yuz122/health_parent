@@ -9,6 +9,7 @@ import com.itheima.pojo.CheckGroup;
 import com.itheima.pojo.CheckItem;
 import com.itheima.service.CheckGroupService;
 import com.itheima.service.CheckItemService;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -22,12 +23,14 @@ public class CheckGroupController {
     @Reference
     private CheckGroupService checkGroupService;
 
+
     @RequestMapping("/checkitemList.do")
     public CheckGroup checkitemList(){
         CheckGroup checkGroup = checkGroupService.findItemList();
         return checkGroup;
     }
 
+    @PreAuthorize("hasAuthority('CHECKGROUP_ADD')")//权限校验
     @RequestMapping("/add.do")
     public Result add(@RequestBody CheckGroup checkGroup,Integer[] checkitemIds){
         try {
@@ -50,6 +53,7 @@ public class CheckGroupController {
         return pageResult;
     }
 
+    @PreAuthorize("hasAuthority('CHECKGROUP_DELETE')")//权限校验
     @RequestMapping("/deleteOne.do")
     public Result deleteOne(Integer id){
         try {

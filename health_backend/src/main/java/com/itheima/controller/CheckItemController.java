@@ -57,6 +57,7 @@ public class CheckItemController {
         return new Result(true,MessageConstant.DELETE_CHECKITEM_SUCCESS);
     }
 
+    @PreAuthorize("hasAnyAuthority('USER_QUERY')")//权限校验
     @RequestMapping("/findById.do")
     public Result findById(Integer id){
         CheckItem checkItem = null;

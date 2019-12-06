@@ -9,6 +9,7 @@ import com.itheima.entity.QueryPageBean;
 import com.itheima.entity.Result;
 import com.itheima.pojo.Setmeal;
 import com.itheima.service.SetmealService;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -44,6 +45,7 @@ public class SetmealController {
         }
     }
 
+    @PreAuthorize("hasAuthority('SETMEAL_ADD')")//权限校验
     @RequestMapping("/add.do")
     public Result add(@RequestBody Setmeal setmeal,Integer[] checkgroupIds){
         try {
@@ -90,6 +92,7 @@ public class SetmealController {
         }
     }
 
+    @PreAuthorize("hasAuthority('SETMEAL_DELETE')")//权限校验
     @RequestMapping("/deleteOne.do")
     public Result deleteOne(Integer id){
       return null;
