@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/health_backend/target/maven-archiver/maven-archiver (1).iml" filepath="$PROJECT_DIR$/health_backend/target/maven-archiver/maven-archiver (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/health_common/target/maven-archiver/maven-archiver (2).iml" filepath="$PROJECT_DIR$/health_common/target/maven-archiver/maven-archiver (2).iml" />
+      <module fileurl="file://$PROJECT_DIR$/health_interface/target/maven-archiver/maven-archiver (3).iml" filepath="$PROJECT_DIR$/health_interface/target/maven-archiver/maven-archiver (3).iml" />
+      <module fileurl="file://$PROJECT_DIR$/health_jobs/target/maven-archiver/maven-archiver (4).iml" filepath="$PROJECT_DIR$/health_jobs/target/maven-archiver/maven-archiver (4).iml" />
+      <module fileurl="file://$PROJECT_DIR$/health_mobile/target/maven-archiver/maven-archiver (5).iml" filepath="$PROJECT_DIR$/health_mobile/target/maven-archiver/maven-archiver (5).iml" />
+      <module fileurl="file://$PROJECT_DIR$/health_service_provider/target/maven-archiver/maven-archiver (6).iml" filepath="$PROJECT_DIR$/health_service_provider/target/maven-archiver/maven-archiver (6).iml" />
+    </modules>
+  </component>
+</project>

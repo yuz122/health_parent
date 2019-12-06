@@ -1,0 +1,14 @@
+health_parent：父工程，打包方式为pom，统一锁定依赖的版本，同时聚合其他子模块便于统一执行maven命令
+
+health_common：通用模块，打包方式为jar，存放项目中使用到的一些工具类、实体类、返回结果和常量类
+
+health_interface：打包方式为jar，存放服务接口
+
+health_service_provider：Dubbo服务模块，打包方式为war，存放服务实现类、Dao接
+口、Mapper映射文件等，作为服务提供方，需要部署到tomcat运行
+
+health_backend：传智健康管理后台，打包方式为war，作为Dubbo服务消费方，存放
+Controller、HTML页面、js、css、spring配置文件等，需要部署到tomcat运行
+
+health_mobile：移动端前台，打包方式为war，作为Dubbo服务消费方，存放
+Controller、HTML页面、js、css、spring配置文件等，需要部署到tomcat运行
